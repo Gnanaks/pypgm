@@ -1,0 +1,65 @@
+PACKAGE ARCHITEXTURE: 
+* The process of transfering thhe information from one file to another file.
+* PACKAGE -- Folder
+* MODULE --- file
+Note: A PACKAGE can store multiple modules in it ..
+
+SCENARIO 1:
+* When two different files are in the same folder and data is transferd from file 1 to file 2.
+
+STEP 1: Creat a folder called  "PACKAGE" and Create a python file name "file1.py" in the folder.
+STEP 2: Open "file1.py" and Create two functions for verifying valid username aand password.
+
+def valid_password(pw):
+    uc = 0
+    lc = 0
+    dig = 0
+    sc = 0
+
+    for i in pw:
+        if 'A' <= i <= 'Z':
+            uc += 1
+        elif 'a' <= i <= 'z':
+            lc += 1
+        elif '0' <= i <= '9':
+            dig += 1
+        else:
+            sc += 1
+
+    if uc >= 2 and lc >= 2 and dig >= 2 and sc >= 2:
+        return 'valid password'
+    else:
+        return 'Invalid password'
+
+STEP 3:Create a python file named "file2.py" in that folder and report the functionality from "file1.py".
+
+import file1
+
+un = 'sakshi_27'
+pw = 'Sakshi@123'
+
+print(file1.valid_username(un))
+print(file1.valid_password(pw))
+
+*Note: We have to use the keyword "import" to get the functionality from the file .
+
+CONCLUSION : The functionlatiy of "file1.py" should never be called on its own file.
+
+SCENARIO 2:
+* When two different files are in the different folder and data is transferd from file 1 to file 3.
+
+STEP 1: Create a python file name "file3.py" outside the package folder an import the functionality from "file1.py" of "package" folder to "file3.py"
+
+*Note: We have to use the keyword "import"  and "input" to get the functionality from the file .
+>"import" -- to select the package 
+>"input" -- to select targeted filr in the paackage
+
+from package import file1
+
+un = 'sakshi_27'
+pw = 'SSakshi_@123'
+
+print(file1.valid_username(un))
+print(file1.valid_password(pw))
+
+CONCLUSION: PACKAGE RCHITEXTURE is used anomynoulsy in the data analysis and frameworks.

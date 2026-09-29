@@ -1,0 +1,8 @@
+
+from package import file1
+
+un = 'sakshi_27'
+pw = 'SSakshi_@123'
+
+print(file1.valid_username(un))
+print(file1.valid_password(pw))
