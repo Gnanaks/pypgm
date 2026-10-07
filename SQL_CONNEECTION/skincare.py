@@ -1,0 +1,19 @@
+import sqlite3
+a = sqlite3.connect('chinnu..db')
+b = a.cursor()
+b.execute("CREATE TABLE SKINCARE(PRODUCT_NO NUMBER,PRODUCT_NAME VARCHAR,BRAND VARCHAR,PRICE NUMBER)")
+
+b.execute("INSERT INTO SKINCARE VALUES (1, 'FACEWASH', 'HIMALAYA', 329)")
+
+b.execute("INSERT INTO SKINCARE VALUES (2, 'CLEANSER', 'PLUM', 250)")
+
+b.execute("INSERT INTO SKINCARE VALUES (3, 'SERUM', 'MINIMILIST', 343)")
+
+b.execute("INSERT INTO SKINCARE VALUES (4, 'MOISTURIZER', 'BOITIQUE', 379)")
+
+b.execute("INSERT INTO SKINCARE VALUES (5, 'SUNSCREEN', 'MINIMILIST', 399)")
+
+a.commit()
+
+c = b.execute("SELECT * FROM SKINCARE")
+print(list(c))

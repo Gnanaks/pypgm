@@ -1,0 +1,34 @@
+SQL CONNECTION 
+--The process of connecting python code with SQL queries
+
+Inbuilt Functions needed for SQL CONNECTION
+1.connect() - It is used to connect python file with database file.
+
+database --->SQLITE3
+install the extension "SQLITE viewer" to view the database
+
+Note: Connect() exists in SQLITE3 module so to use connect() we need to import that module first
+
+#code
+import sqlite3
+a = sqlite3.connect('chinnu..db')
+
+usecase of connect() -- It connects with DB  file if exists or else it will create the DB file and connects it.
+
+2.Cursore()-- it createes aspace for in the database for tabl creation process
+
+#code
+import sqlite3
+a = sqlite3.connect('chinnu..db')
+b = a.cursor()
+
+3.execute()-- It helps to create a table add records to that table and also to extract the data from a table 
+
+#create a table 
+CRFEATE TABLE TABLENAME(COL_NAME DATATYPE)
+
+#adding records to a table 
+INSERT INTO TABLENAME VALUES (VAL1,VAL2,...,VALN)
+
+#extract the data from a table
+SELECT * FROM TABLENAME

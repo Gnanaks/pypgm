@@ -1,0 +1,35 @@
+REGULAR EXPRESSION
+--It is a sequence of characters which generates the search patterns
+
+FUNCTIONALITES OF RE
+1.search
+2.Extract validate
+4.Replace
+5.Identify
+
+TO find the data from the given string we have to use --findall()
+
+OPERATOR :
+1. [abc] -- Extract all the alphabets with a,b and characters
+2. [a-z] -- Extract all the L.C alphabets
+3. [A-Z] -- Extract all the U..C  alphabets
+2. [0-9] -- Extract all the NUMBER characters
+
+SHORTCUT OPERATOR:
+1. \d -- Extract all the NUMBER characters only .
+2. \D -- Extract all the  characters except NUMBER .
+3. \w -- Extract all the letters ,numbers and underscore.
+4. \W -- Extract all the characters except letters ,numbers and underscore.
+5. \s -- extract all the white-spaces and 1 TAB spaces.
+
+QUANTIFIER OPERATORS:
+
+1. * -- It may contain zero or more. 
+2. + -- It may contain one or more.
+3. ? -- It may conatin zero or one.
+4. {n} -- It may contain exactly n times.
+
+INBUILT FUNCTIONS ON RE:
+1. findall() --It returns all matches as a list .
+
+SYNTAX : re.findall(r"patterns",data)
