@@ -1,0 +1,206 @@
+5. HAPPY NUMBER:
+--  A NUMBER is considered as HAPPY NUMBER only if repeatedly it with sum of the square of the digits which eventually results in 1.
+ex: 19 -> 1**2 + 9**2 --> 82
+    82 -> 8**2 + 2**2 --> 68
+    68 -> 6**2 + 8**2 --> 82
+
+#code 
+#happy number
+n = int(input("enter the number:"))
+while n != 1 and n != 4:
+    total = 0
+    temp = n
+
+    while temp > 0:
+        last_digit = temp % 10 
+        total += last_digit * last_digit
+        temp //= 10
+
+    n = total
+if n == 1:
+    print("happy number")
+else: 
+    print("not happy number")
+
+6.PERFECT NUMBER:
+--A number  is considered to be a PERFECT NUMBER if the sum of all of its proper divisors(expect the number itself ) equals to given number .
+ex : 6 
+    1 + 2 + 3(divisors) =6 ---> perfect number
+
+#code
+#happy number
+n = int(input("enter the number:"))
+while n != 1 and n != 4:
+    total = 0
+    temp = n
+
+    while temp > 0:
+        last_digit = temp % 10 
+        total += last_digit * last_digit
+        temp //= 10
+
+    n = total
+if n == 1:
+    print("happy number")
+else: 
+    print("not happy number")
+
+#PERFECT NUMBER 
+n = int(input("enter a number:"))
+total = 0
+for i in range(1 , n):
+    total += i
+if total == n:
+    print('prfect number')
+else: 
+    print('not a perfect number')
+
+7. HARSHAD NUMBER: (imp)
+n= int(input('enter the number:'))
+temp=n
+sum_of_digits=0
+while temp>0:
+    last_digit=temp%10
+    sum_of_digits+=last_digit
+    temp//=10
+if n%sum_of_digits==0:
+    print('harshad number')
+else:
+    print('not a harshad number')
+
+8. AUTOMORPHIC NUMBER:
+-- A number is AUTOMORPHIC number if its square ends with the number itself or x 
+#code
+n = int(input('enter a number:'))
+square = n*n 
+temp = n 
+digits = 0 
+while temp > 0:
+    digits += 1
+    temp //= 10
+power = 1
+for i in range(digits):
+    power *= 10
+if square % power == n:
+    print('automorpic number')
+else :
+    print('not anautomorpic number')
+
+9.DIZZARIUM NUMBER :   
+-- A number is DIZZARIUM if the sum of digits raised to the power of its positions is equal to the given number itself.
+eg : 135 --- no. of digits is 3
+     1**1 + 3**2 + 5**3 -> 1 + 9 + 125 = 135 ---> Dizzarium number 
+     
+#code
+n = int(input("enter a number:"))
+digit = 0
+temp = n
+while temp > 0 :
+    digit += 1
+    temp //= 10
+
+temp = n
+total = 0
+power = digit
+while temp >0:
+    last_digit = temp % 10 
+    total += last_digit ** power 
+    power -= 1
+    temp //= 10
+if total == n:
+    print('dizzarium number')
+else :
+    print('Not a dizzarium number')
+
+10.NEON NUMBER : 
+-- A number is NEON if the square of a number has a digit equals the sum of the given number itself .
+Ex : 9 --> 9**9 or 9X9 --> 8 1 --> 8+1 = 9 --> NEON NUMBER
+
+#code
+n = int(input("Enter a number: "))
+
+sqr = n * n
+sum_digits = 0
+
+while sqr > 0:
+    digit = sqr % 10
+    sum_digits += digit
+    sqr 5//= 10
+
+if sum_digits == n:
+    print(n, "is a Neon number")
+else:
+    print(n, "is not a Neon number")
+
+11.SPY NUMBER:
+-- A number is SPY if the sum of the each and every individual of a number equals to its product of each and evry value of a digit 
+Ex :1124 → Sum = 1 + 1 + 2 + 4 = 8
+    Product = 1 × 1 × 2 × 4 = 8
+    So, 1124 is a Spy Number.
+
+#code
+n = int(input("Enter a number: "))
+sum_digits = 0
+product_digits = 1
+temp = n
+while temp > 0:
+    digit = temp % 10
+    sum_digits += digit
+    product_digits *= digit
+    temp //= 10
+if sum_digits == product_digits:
+    print(n, "is a Spy Number")
+else:
+    print(n, "is not a Spy Number")
+
+12.FIBANOCCI SERIES :
+--> The process of printong the first n terms of where  each terms is the sum of two items before it .This series is generally starts with 0 and 1 
+Ex : 0 and 1
+    0 1 1 2 3 5 8 12.....n 
+
+#code 
+n = int(input("Enter the number of terms: "))
+
+a = int(input("Enter the first of value terms: "))
+b = int(input("Enter the second of value: "))
+
+print("Fibonacci Series:")
+
+for i in range(n):
+    print(a, end=" ")
+    c = a + b
+    a = b
+    b = c 
+
+13. GCD (Greatest common divisor)
+-- It is thhe largest number that divides both the given number exactlly .
+Ex : 12 and 24 -- GCD is --> 24 
+Note : GCD always will be either the lesser value b/w two inputs or less than that .
+# code 
+a = int(input("Enter the first value : "))
+b = int(input("Enter the second value: "))
+gcd = 1
+limit = a
+if b < limit :
+    limit = b 
+for i in range( 1, limit + 1):
+    if a % i == 0 and b % i == 0:
+        gcd = 1 
+print('gretest Common Divisor=',gcd )
+
+14. LCM(Lowest common multiple)
+-- It is the smallest number exactlly divisible by both givn numbers .
+Ex : multiple of 4 -> 4 8 12 16 20 24 28 
+     multiple of 6 -> 6 12 18 24 30 36 42
+     Among them 12 is the LCM
+
+#code 
+
+a = int(input("Enter the first value : "))
+b = int(input("Enter the second value: "))
+
+lcm = a
+while lcm % b != 0:
+    lcm += a 
+print('leeast Common Divisor=',lcm )
+    
