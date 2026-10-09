@@ -202,5 +202,81 @@ b = int(input("Enter the second value: "))
 lcm = a
 while lcm % b != 0:
     lcm += a 
-print('leeast Common Divisor=',lcm )
-    
+print('least Common Divisor=',lcm )
+
+15.PRIME FACTORS IN A LOOP:
+-- The process of finding all the factors of a number and display only the prime number among the given factors.
+Ex:  18 factors are 1, 2, 3, 6, 9, 18
+     where only 2 and 3 are the only prime factors of 18.
+
+#code
+a = int(input('enter a number: '))
+i = 2 
+while i < a:
+    if a % i == 0:
+        for j in range(1,i+1):
+            if i % j == 0:
+                count += 0
+        if count == 2:
+            print(i)
+            a //= i
+        else:
+            i += 1
+    else:
+         i += 1
+
+16.PALLINDROME OF NUMBER:
+--The process of reversing the given number and comparing the reversed number with the original number . If it satisfies then it is PALLINDROME
+
+#code
+n = int(input("Enter a number: "))
+
+temp = n
+reverse = 0
+
+while temp > 0:
+    digit = temp % 10
+    reverse = reverse * 10 + digit
+    temp //=10
+
+if n == reverse:
+    print(n, "is a Palindrome Number")
+else:
+    print(n, "is not a Palindrome Number")
+
+17. DIGIT FREQUENCY:
+-- The process of finding how many times each digit(0-9) occurs in a given number .
+Ex: 11222333444455
+    O/P :{ 1 : 2 , 2 : 3 , 3 : 3 , 4 : 4 , 5 : 2}
+
+#code
+n = int(input("Enter the Number: "))
+out = {}
+for i in range(0, 10):
+    temp = n
+    count = 0
+    while temp > 0:
+        last_digit = temp % 10
+        if last_digit == i:
+            count += 1
+        temp //= 10
+    if count > 0:
+        out[i] = count
+print(out)
+
+17.SECOND LARGEST ELEMENT IN A COLLCTION  : 
+-- The process of finding  the second largest element in a collection by assuming initial value as the largest at the start .
+Ex : [10, 20, 50, 40, 30]
+
+#code
+a = [10, 25, 8, 40, 30]
+largest = a[0]
+second = a[0]
+for i in a:
+    if i > largest:
+        second = largest
+        largest = i
+    elif i > second and i != largest:
+        second = i
+print("First largest element:", largest)
+print("Second largest element:", second)
